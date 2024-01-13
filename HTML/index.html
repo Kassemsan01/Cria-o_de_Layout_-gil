@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Layout</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <script src="../JS/index.js" defer></script>
+    <link rel="shortcut icon" href="../IMAGEM/lista.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="nav">
+            <img src="../IMAGEM/Imagem-padrão.png" alt="Ícone Padrão">
+            <footer><strong>Nome genérico</strong></footer>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate animi nihil assumenda quibusdam.
+                Tenetur nihil vitae aut eveniet voluptatibus eius, possimus dignissimos sequi corporis iste dicta autem
+                adipisci blanditiis repellat.</p>
+
+            <ul>
+                <li><a href=”#” target="_blank">❗Importante</a></li>
+                <li><a href=”#” target="_blank">🗑️ Lixeira</a></li>
+                <li><a href=”#” target="_blank">📖 totas as notas</a></li>
+                <li><a href=”#” target="_blank">📂 Notas compartilhadas</a></li>
+            </ul>
+
+        </div>
+
+        <div id="main-content">
+            <h1>Lista de Tarefas 📝</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dia ☀️</th>
+                        <th id="Noite">Noite🌙</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul id="day-tasks"></ul>
+                         
+                            <input type="text" id="day-task-input" placeholder="Nova Tarefa">
+                            <button onclick="addTask('day-tasks', 'day-task-input')">Adicionar</button>
+                        </td>
+                        
+                        <td>
+                            <ul id="night-tasks">
+                            </ul>
+                            <input type="text" id="night-task-input" placeholder="Nova Tarefa">
+                            <button onclick="addTask('night-tasks', 'night-task-input')">Adicionar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
