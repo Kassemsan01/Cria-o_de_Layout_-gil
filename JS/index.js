@@ -1,4 +1,5 @@
 const Labelinput = document.querySelector("#day-task-input");
+const Labelinput_noite = document.querySelector("#night-task-input");
 
 function addTask(listId, inputId) {
   const taskInput = document.getElementById(inputId);
@@ -64,6 +65,12 @@ function addTask(listId, inputId) {
   Labelinput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       addTask("day-tasks", "day-task-input");
+    }
+  });
+
+  Labelinput_noite.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      addTask("night-tasks", "night-task-input");
     }
   });
 }
