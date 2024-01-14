@@ -337,9 +337,9 @@ button:hover {
         display: block;
         width: 80%;
     }
-    /*  */
+    /**/
 
-
+    /* Nessa parte resolvi manter apenas um input, um button e retirar o titulo "Dia" e "Noite" */
     #day-tasks {
         margin-bottom: 10px;
         padding: 10px;
@@ -354,5 +354,6 @@ button:hover {
     }
 
     #noite_input{ display: none;}
+    /**/
 }
 /**/
