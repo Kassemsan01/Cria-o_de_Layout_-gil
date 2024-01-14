@@ -254,10 +254,13 @@ button:hover {
 /* Estilo no modo responsivo */
 @media screen and (max-width: 600px) {
 
+    /* Estilo geral */
     #container {
         flex-direction: column;
     }
+    /**/
 
+    /* Estilo da Home */
     #nav img {
         max-width: 50%;
         border-radius: 50%;
@@ -278,34 +281,41 @@ button:hover {
         padding-right: 50px;
         padding-left: 50px;
     }
+    /**/
 
+    /*Estilo do conteudo geral  */
     #main-content {
         flex: 0 0 auto;
         box-shadow: none;
         margin: 0;
-        max-width: 100%;
+        width: 100%;
         max-height: 100%;
+        padding: 10;
+    }
+
+    #main-content h1{
+        padding: 10px;
+        width: auto;
     }
 
     table {
         display: block;
-        max-width: 500px;
+        width: auto;
         max-height: 200px;
     }
 
     td {
         display: block;
         width: 355px;
+        border: none;
     }
 
     th {
         display: none;
     }
+    /**/
 
-    #Noite {
-        display: none;
-    }
-
+    /* Estilo dos inputs e buttons */
     input[type="text"] {
         width: 72%;
         padding: 8px;
@@ -327,6 +337,8 @@ button:hover {
         display: block;
         width: 80%;
     }
+    /*  */
+
 
     #day-tasks {
         margin-bottom: 10px;
