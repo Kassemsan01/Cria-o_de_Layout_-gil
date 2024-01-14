@@ -1,4 +1,4 @@
-const Labelinput = document.querySelector("#day-task-input")
+const Labelinput = document.querySelector("#day-task-input");
 
 function addTask(listId, inputId) {
   const taskInput = document.getElementById(inputId);
@@ -13,8 +13,8 @@ function addTask(listId, inputId) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.className = "task-checkbox";
-
     newTask.appendChild(checkbox);
+    //
 
     // Adiciona um botão para remover a tarefa
     const removeButton = document.createElement("button");
@@ -23,7 +23,12 @@ function addTask(listId, inputId) {
     removeIcon.src = "../IMAGEM/botao-apagar.png";
     removeIcon.alt = "Remover";
     removeButton.appendChild(removeIcon);
+    removeButton.onclick = function () {
+      taskList.removeChild(newTask);
+    };
+    //
 
+    // Adiciona um botão para editar a tarefa
     const editButton = createActionButton(
       "../IMAGEM/lapis.png",
       "Editar",
@@ -31,10 +36,23 @@ function addTask(listId, inputId) {
         editTask(newTask, taskInput);
       }
     );
+    function editTask(taskElement, taskInput) {
+      const currentText = taskElement.textContent;
+      taskInput.value = currentText;
+      taskElement.parentNode.removeChild(taskElement);
+    }
 
-    removeButton.onclick = function () {
-      taskList.removeChild(newTask);
-    };
+    function createActionButton(iconSrc, altText, clickHandler) {
+      const button = document.createElement("button");
+      button.className = "action-button";
+      const icon = document.createElement("img");
+      icon.src = iconSrc;
+      icon.alt = altText;
+      button.appendChild(icon);
+      button.onclick = clickHandler;
+      return button;
+    }
+    //
 
     newTask.appendChild(editButton);
     newTask.appendChild(removeButton);
@@ -43,28 +61,9 @@ function addTask(listId, inputId) {
     taskInput.value = "";
   }
 
-  function createActionButton(iconSrc, altText, clickHandler) {
-    const button = document.createElement("button");
-    button.className = "action-button";
-    const icon = document.createElement("img");
-    icon.src = iconSrc;
-    icon.alt = altText;
-    button.appendChild(icon);
-    button.onclick = clickHandler;
-    return button;
-  }
-
-  function editTask(taskElement, taskInput) {
-    const currentText = taskElement.textContent;
-    taskInput.value = currentText;
-    taskElement.parentNode.removeChild(taskElement);
-  }
-
-  Labelinput.addEventListener("keydown", (e) =>{
-    if(e.key === "Enter"){
-      addTask('day-tasks', 'day-task-input');
+  Labelinput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      addTask("day-tasks", "day-task-input");
     }
-  })
+  });
 }
-
-

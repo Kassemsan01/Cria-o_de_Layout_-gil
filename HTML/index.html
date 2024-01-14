@@ -13,7 +13,7 @@
 <body>
 
     <div id="container">
-
+        <!-- Menu esquerdo -->
         <div id="nav">
             <img src="../IMAGEM/Imagem-padrão.png" alt="Ícone Padrão">
             <footer><strong>Nome genérico</strong></footer>
@@ -30,6 +30,7 @@
 
         </div>
 
+        <!-- Conteúdo principal-->
         <div id="main-content">
             <h1>Lista de Tarefas 📝</h1>
 
@@ -49,7 +50,7 @@
                             <button onclick="addTask('day-tasks', 'day-task-input')">Adicionar</button>
                         </td>
                         
-                        <td>
+                        <td id="noite_input">
                             <ul id="night-tasks">
                             </ul>
                             <input type="text" id="night-task-input" placeholder="Nova Tarefa">
